@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    }
+]
