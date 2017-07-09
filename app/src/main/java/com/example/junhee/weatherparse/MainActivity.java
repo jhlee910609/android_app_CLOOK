@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements TaskInterface {
     final String URI_DEFAULT = "&city=&county=&village=";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements TaskInterface {
         Remote.newTask(this);
     }
 
-    public void setWeatherUri(int version, double lat, double lon) {
+    public void setWeatherUri(int version, double lat, double lon){
         currentUri = URI_PREFIX + URI_MID + version + URI_LAT + lat + URI_LON + lon + URI_DEFAULT;
         Log.e("Main", "=========== currentUri : " + currentUri);
     }
@@ -55,35 +55,39 @@ public class MainActivity extends AppCompatActivity implements TaskInterface {
     }
 
     @Override
-    public void postExecute(String jsonString) {
+    public void postExecute(String jsonString){
         Data data = convertJson(jsonString);
         Log.e("Main", "=========== data : " + data.toString());
         weather = data.getWeather();
         Hourly hourly[] = weather.getHourly();
         Log.e("Main", "========= hourly.length" + hourly.length);
+
+        setWeatherInfo(hourly[0]);
+    }
+
+    private void setWeatherInfo(Hourly hourly){
         setTemp(hourly);
         setWind(hourly);
         setHumid(hourly);
     }
 
-    private void setHumid(Hourly[] hourly) {
+    private void setHumid(Hourly hourly){
         try {
-            String str = "현재 습도 : " + hourly[0].getHumidity();
+            String str = "현재 습도 : " + hourly.getHumidity();
             tv_humid.setText(str);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-    public void setTemp(Hourly[] hourly) {
+    public void setTemp(Hourly hourly){
 
         try {
-            String str = "현재기온 = " + hourly[0].getTemperature().getTc() + "\n"
-                    + "최고기온 = " + hourly[0].getTemperature().getTmax() + "\n"
-                    + "최저기온 = " + hourly[0].getTemperature().getTmin();
+            String str = "현재기온 = " + hourly.getTemperature().getTc() + "\n"
+                    + "최고기온 = " + hourly.getTemperature().getTmax() + "\n"
+                    + "최저기온 = " + hourly.getTemperature().getTmin();
 
-            Log.e("Main", "Temp ====================" + hourly[0].getTemperature());
+            Log.e("Main", "Temp ====================" + hourly.getTemperature());
             tv_temp.setText(str);
 
         } catch (Exception e) {
@@ -91,17 +95,17 @@ public class MainActivity extends AppCompatActivity implements TaskInterface {
         }
     }
 
-    public void setWind(Hourly[] hourly) {
+    public void setWind(Hourly hourly){
 
         try {
-            String str = "풍향 = " + hourly[0].getWind().getWdir() + "\n풍속 = " + hourly[0].getWind().getWspd();
+            String str = "풍향 = " + hourly.getWind().getWdir() + "\n풍속 = " + hourly.getWind().getWspd();
             tv_wind.setText(str);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public Data convertJson(String jsonString) {
+    public Data convertJson(String jsonString){
         Gson gson = new Gson();
         return gson.fromJson(jsonString, Data.class);
     }
