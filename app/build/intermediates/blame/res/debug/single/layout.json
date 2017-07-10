@@ -8,6 +8,10 @@
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/notification_template_part_time.xml"
     },
     {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/fragment_main_change_loc.xml",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/layout/fragment_main_change_loc.xml"
+    },
+    {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_dialog_title_material.xml"
     },
@@ -18,10 +22,6 @@
     {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/activity_main2.xml",
-        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/layout/activity_main2.xml"
     },
     {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
@@ -108,6 +108,10 @@
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/activity_intro.xml",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/layout/activity_intro.xml"
+    },
+    {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_screen_simple.xml"
     },
@@ -152,12 +156,20 @@
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_action_menu_layout.xml"
     },
     {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/fragment_main_weather.xml",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/layout/fragment_main_weather.xml"
+    },
+    {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
         "source": "/Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/activity_detail_weather_acitivity.xml",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/layout/activity_detail_weather_acitivity.xml"
     },
     {
         "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",

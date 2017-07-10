@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:3:5-46
 		INJECTED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml
@@ -18,7 +18,9 @@ ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/Android
 	android:name
 		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:7:5-22:19
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:7:5-24:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:9:5-20
+MERGED from [com.tsengvn:typekit:1.0.1] /Users/JunHee/.android/build-cache/e2c01d116952dc8e776c02436b744d499d925500/output/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /Users/JunHee/.android/build-cache/6397c09bcbe8ba8918ecf3d0259d46511118912d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/JunHee/.android/build-cache/cf9eeb5080923b13bcd9e83a561ae50952c07ae8/output/AndroidManifest.xml:29:5-20
@@ -27,40 +29,49 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/JunHee/.android/
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/JunHee/.android/build-cache/d083015550759cea92ee4bd2e4fedd5b77be00f7/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/c771c9ba24363164526ebd1f2df8e6e5553a061b/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/6ba5c9b12053ccc381aa5b8a6b915723159217db/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/JunHee/.android/build-cache/e750d97a6b220d8f3162ae98dd7c1d9a4e378820/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:11:9-41
 	android:supportsRtl
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:13:9-35
 	android:roundIcon
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:12:9-54
 	android:allowBackup
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:10:9-43
 	android:theme
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:14:9-43
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:8:9-45
 activity#com.example.junhee.weatherparse.MainActivity
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:14:9-20:20
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:15:9-59
 	android:name
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:14:19-47
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:15:19-47
+activity#com.example.junhee.weatherparse.IntroActivity
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:16:9-22:20
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:16:19-48
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:18:27-74
-activity#com.example.junhee.weatherparse.Main2Activity
-ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:21:9-60
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:20:27-74
+activity#com.example.junhee.weatherparse.DetailWeatherAcitivity
+ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:23:9-69
 	android:name
-		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:21:19-48
+		ADDED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml:23:19-57
 uses-sdk
 INJECTED from /Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.7.0] /Users/JunHee/.android/build-cache/eb19086eba7149de2b13e1b24fd00bb965dc9c75/output/AndroidManifest.xml:5:5-43
+MERGED from [com.github.flavienlaurent.discrollview:library:0.0.2] /Users/JunHee/.android/build-cache/2e12b4490d5543a746a2794a7e30a3e6c555dbc6/output/AndroidManifest.xml:3:5-100
+MERGED from [com.tsengvn:typekit:1.0.1] /Users/JunHee/.android/build-cache/e2c01d116952dc8e776c02436b744d499d925500/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] /Users/JunHee/.android/build-cache/6397c09bcbe8ba8918ecf3d0259d46511118912d/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/JunHee/.android/build-cache/cf9eeb5080923b13bcd9e83a561ae50952c07ae8/output/AndroidManifest.xml:21:5-23:60
@@ -69,10 +80,7 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/JunHee/.android/
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/JunHee/.android/build-cache/d083015550759cea92ee4bd2e4fedd5b77be00f7/output/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/c771c9ba24363164526ebd1f2df8e6e5553a061b/output/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/6ba5c9b12053ccc381aa5b8a6b915723159217db/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.jakewharton:butterknife:8.7.0] /Users/JunHee/.android/build-cache/eb19086eba7149de2b13e1b24fd00bb965dc9c75/output/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-compat:25.3.1] /Users/JunHee/.android/build-cache/e750d97a6b220d8f3162ae98dd7c1d9a4e378820/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.github.flavienlaurent.discrollview:library:0.0.2] /Users/JunHee/.android/build-cache/2e12b4490d5543a746a2794a7e30a3e6c555dbc6/output/AndroidManifest.xml:3:5-100
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:23:9-75
 	android:maxSdkVersion

@@ -17,10 +17,10 @@ public final class R {
         public static final int discrollve_translation = 0x7f010001;
     }
     public static final class id {
-        public static final int fromBottom = 0x7f0b0009;
-        public static final int fromLeft = 0x7f0b000a;
-        public static final int fromRight = 0x7f0b000b;
-        public static final int fromTop = 0x7f0b000c;
+        public static final int fromBottom = 0x7f0c000a;
+        public static final int fromLeft = 0x7f0c000b;
+        public static final int fromRight = 0x7f0c000c;
+        public static final int fromTop = 0x7f0c000d;
     }
     public static final class styleable {
         public static final int[] DiscrollView_LayoutParams = { 0x7f010001, 0x7f0100ce, 0x7f0100cf, 0x7f0100d0, 0x7f0100d1, 0x7f0100d2, 0x7f0100d3 };
