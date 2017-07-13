@@ -1,4 +1,4 @@
-package com.example.junhee.weatherparse.util;
+package com.example.junhee.weatherparse.util.weatherParser;
 
 /**
  * Created by JunHee on 2017. 7. 9..

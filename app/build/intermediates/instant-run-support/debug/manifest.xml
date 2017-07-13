@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:maxSdkVersion="19"
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -24,14 +24,15 @@
         android:supportsRtl="true"
         android:theme="@style/CustomTheme" >
         <activity android:name="com.example.junhee.weatherparse.MainActivity" />
-        <activity android:name="com.example.junhee.weatherparse.IntroActivity" >
+        <activity android:name="com.example.junhee.weatherparse.activity.IntroActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.junhee.weatherparse.DetailWeatherAcitivity" />
+        <activity android:name="com.example.junhee.weatherparse.activity.DetailWeatherAcitivity" />
+        <activity android:name="com.example.junhee.weatherparse.activity.GoToMallActivity" />
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"

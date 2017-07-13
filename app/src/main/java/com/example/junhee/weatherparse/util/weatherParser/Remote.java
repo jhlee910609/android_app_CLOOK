@@ -1,4 +1,4 @@
-package com.example.junhee.weatherparse.util;
+package com.example.junhee.weatherparse.util.weatherParser;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -22,7 +22,6 @@ public class Remote {
         URL serverUrl = new URL(url);
         HttpURLConnection con = (HttpURLConnection) serverUrl.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("appKey", "2824ebc2-dd6d-318c-baa6-3cc11f6508b7");
 
         int responseCode = con.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -38,9 +37,7 @@ public class Remote {
     }
 
     public static void newTask(final TaskInterface taskInterface) {
-
         new AsyncTask<String, Void, String>() {
-
             @Override
             protected String doInBackground(String... params) {
                 String result = "";

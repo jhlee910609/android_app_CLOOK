@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.example.junhee.weatherparse"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -26,13 +26,21 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.code.gson:gson:2.8.1'
-    compile 'com.jakewharton:butterknife:8.7.0'
     compile 'com.github.flavienlaurent.discrollview:library:0.0.2@aar'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.tsengvn:typekit:1.0.1'
+    compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
     testCompile 'junit:junit:4.12'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.+'
+    compile 'com.squareup.retrofit:converter-gson:2.+'
+
+
+
 }

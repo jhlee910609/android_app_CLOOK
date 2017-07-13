@@ -3,6 +3,14 @@
     <string name="intro_title">날씨와 스타일을 책임지는 데일리 날씨 앱</string>
     <string name="spinner_gender_prompt">탕신의 성별을 선택하시오.</string>
     <string name="spinner_age_prompt">당신의 연령대를 선택하시오.</string>
+    <string name="fashion_detail_show_product">추천 스타일과 비슷한 제품 보러가기 ></string>
+    <string name="fashion_detail_goToMall">더.싸.멋.챙 데일리룩</string>
+    <string name="main_time_9">오전 9시</string>
+    <string name="main_time_12">오후 12시</string>
+    <string name="main_time_15">오후 3시</string>
+    <string name="main_time_18">오후 6시</string>
+    <string name="main_time_21">오후 9시</string>
+    <string name="main_time_tomo">내일 오전</string>
 
     <string-array name="intro_gender">
         <item>남자</item>
