@@ -4,7 +4,7 @@ package com.example.junhee.weatherparse.util.weatherParser;
  * Created by JunHee on 2017. 7. 9..
  */
 
-public interface TaskInterface {
+public interface KmaTaskInterfce {
 
     public String getUrl();
 

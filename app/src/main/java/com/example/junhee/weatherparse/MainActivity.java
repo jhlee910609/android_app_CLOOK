@@ -10,27 +10,15 @@ import android.util.Log;
 import com.example.junhee.weatherparse.activity.IntroActivity;
 import com.example.junhee.weatherparse.adapter.ViewPagerAdapter;
 import com.example.junhee.weatherparse.domain.Weather3hr;
-import com.example.junhee.weatherparse.domain.kmaWeather.Body;
-import com.example.junhee.weatherparse.domain.kmaWeather.Header;
-import com.example.junhee.weatherparse.domain.kmaWeather.Item;
-import com.example.junhee.weatherparse.domain.kmaWeather.WeatherData;
 import com.example.junhee.weatherparse.fragments.FashionDetailFragment;
 import com.example.junhee.weatherparse.fragments.MainFragment;
-import com.example.junhee.weatherparse.util.BackCloseHandler;
-import com.example.junhee.weatherparse.util.Const;
-import com.example.junhee.weatherparse.util.DateHandler;
-import com.example.junhee.weatherparse.util.weatherParser.ConverJson;
-import com.example.junhee.weatherparse.util.weatherParser.Remote;
-import com.example.junhee.weatherparse.util.weatherParser.TaskInterface;
-import com.example.junhee.weatherparse.util.weatherParser.WeatherParser;
+import com.example.junhee.weatherparse.util.system.BackCloseHandler;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import me.kaelaela.verticalviewpager.VerticalViewPager;
-
-import static com.example.junhee.weatherparse.fragments.MainWeatherFrag.baseDate;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private BackCloseHandler backCloseHandler;
     private String selectedAge = "";
     private String selectedGender = "";
-
-    public Weather3hr weather3hr = Weather3hr.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
