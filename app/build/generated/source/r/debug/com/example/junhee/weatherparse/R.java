@@ -2360,22 +2360,24 @@ containing a value of this type.
         public static final int banner_uniqlo=0x7f020059;
         public static final int banner_zara_m=0x7f02005a;
         public static final int banner_zara_wm=0x7f02005b;
-        public static final int main_female_rain=0x7f02005c;
-        public static final int notification_action_background=0x7f02005d;
-        public static final int notification_bg=0x7f02005e;
-        public static final int notification_bg_low=0x7f02005f;
-        public static final int notification_bg_low_normal=0x7f020060;
-        public static final int notification_bg_low_pressed=0x7f020061;
-        public static final int notification_bg_normal=0x7f020062;
-        public static final int notification_bg_normal_pressed=0x7f020063;
-        public static final int notification_icon_background=0x7f020064;
-        public static final int notification_template_icon_bg=0x7f02006a;
-        public static final int notification_template_icon_low_bg=0x7f02006b;
-        public static final int notification_tile_bg=0x7f020065;
-        public static final int notify_panel_notification_icon_bg=0x7f020066;
-        public static final int style_buy_wm_sun_1=0x7f020067;
-        public static final int style_buy_wm_sun_2=0x7f020068;
-        public static final int style_buy_wm_sun_3=0x7f020069;
+        public static final int img_main_female=0x7f02005c;
+        public static final int img_main_male=0x7f02005d;
+        public static final int main_female_rain=0x7f02005e;
+        public static final int notification_action_background=0x7f02005f;
+        public static final int notification_bg=0x7f020060;
+        public static final int notification_bg_low=0x7f020061;
+        public static final int notification_bg_low_normal=0x7f020062;
+        public static final int notification_bg_low_pressed=0x7f020063;
+        public static final int notification_bg_normal=0x7f020064;
+        public static final int notification_bg_normal_pressed=0x7f020065;
+        public static final int notification_icon_background=0x7f020066;
+        public static final int notification_template_icon_bg=0x7f02006c;
+        public static final int notification_template_icon_low_bg=0x7f02006d;
+        public static final int notification_tile_bg=0x7f020067;
+        public static final int notify_panel_notification_icon_bg=0x7f020068;
+        public static final int style_buy_wm_sun_1=0x7f020069;
+        public static final int style_buy_wm_sun_2=0x7f02006a;
+        public static final int style_buy_wm_sun_3=0x7f02006b;
     }
     public static final class id {
         public static final int action0=0x7f0c0136;
@@ -2525,7 +2527,6 @@ containing a value of this type.
         public static final int imageView4=0x7f0c009b;
         public static final int imageView5=0x7f0c0095;
         public static final int imageView6=0x7f0c008f;
-        public static final int imageView7=0x7f0c010f;
         public static final int imageView8=0x7f0c00b0;
         public static final int imageView9=0x7f0c0066;
         public static final int imgFilter=0x7f0c00ea;
@@ -2560,6 +2561,7 @@ containing a value of this type.
         public static final int main_currentMinTemp=0x7f0c0107;
         public static final int main_currentTemp=0x7f0c0100;
         public static final int main_frameLayout=0x7f0c0114;
+        public static final int main_illust=0x7f0c010f;
         public static final int main_img_currentMaxTemp=0x7f0c0103;
         public static final int main_img_currentMinTemp=0x7f0c0105;
         public static final int main_img_skyStatus=0x7f0c00fe;

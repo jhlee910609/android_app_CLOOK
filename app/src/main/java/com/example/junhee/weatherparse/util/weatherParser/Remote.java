@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.junhee.weatherparse.util.weatherParser.WeatherParser.type;
 
 /**
  * Created by JunHee on 2017. 7. 9..
@@ -15,101 +19,57 @@ import java.net.URL;
 
 public class Remote {
 
-    public static class Kma {
-        public static String getData(String url) throws IOException {
+    public static String getData(String url) throws IOException {
 
-            String result = "";
+        // TODO ======================== 그냥 스트링보다 퍼포먼스 향상에 도움이 된당 ㅋㅋㅋㅋ
+        StringBuilder result = new StringBuilder();
+        URL serverUrl = new URL(url);
 
-            URL serverUrl = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) serverUrl.openConnection();
-            con.setRequestMethod("GET");
-
-            int responseCode = con.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                String temp = null;
-                while ((temp = br.readLine()) != null) {
-                    result += temp;
-                }
-            } else {
-                Log.e("NETWORK", "Error_code" + responseCode);
-            }
-            return result;
-        }
-
-        public static void newTask(final KmaTaskInterfce kmaTaskInterfce) {
-            new AsyncTask<String, Void, String>() {
-                @Override
-                protected String doInBackground(String... params) {
-                    String result = "";
-                    try {
-                        result = getData(params[0]);
-                        Log.i("NETWORK", result);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    return result;
-                }
-
-                @Override
-                protected void onPostExecute(String result) {
-                    kmaTaskInterfce.postExecute(result);
-                }
-                // getUrl(); 로 바꾼다...
-            }.execute(kmaTaskInterfce.getUrl());
-        }
-    }
-
-    public static class SkWeather {
-
-        public static String getData(String url) throws IOException {
-
-            String result = "";
-
-            URL serverUrl = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) serverUrl.openConnection();
-            con.setRequestMethod("GET");
-            con.setRequestProperty("appKey" ,"2824ebc2-dd6d-318c-baa6-3cc11f6508b7");
+        HttpURLConnection con = (HttpURLConnection) serverUrl.openConnection();
+        con.setRequestMethod("GET");
+        // 1. 분기한다...
+        if (url.contains("skplanetx")) {
+            con.setRequestProperty("appKey", "2824ebc2-dd6d-318c-baa6-3cc11f6508b7");
             con.setRequestProperty("Accept", "application/json");
-
-
-            int responseCode = con.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                String temp = null;
-                while ((temp = br.readLine()) != null) {
-                    result += temp;
-                }
-            } else {
-                Log.e("NETWORK", "Error_code" + responseCode);
+        }
+        int responseCode = con.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String temp = null;
+            while ((temp = br.readLine()) != null) {
+                result.append(temp);
             }
-            return result;
+        } else {
+            Log.e("NETWORK", "Error_code" + responseCode);
         }
-
-        public static void newTask(final SkTaskInterface skTaskInterface) {
-            new AsyncTask<String, Void, String>() {
-                @Override
-                protected String doInBackground(String... params) {
-                    String result = "";
-                    try {
-                        result = getData(params[0]);
-                        Log.i("NETWORK", result);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    return result;
-                }
-
-                @Override
-                protected void onPostExecute(String result) {
-                    skTaskInterface.postSkExecute(result);
-                }
-                // getUrl(); 로 바꾼다...
-            }.execute(skTaskInterface.getSkUrl() );
-        }
+        return result.toString();
     }
 
-}
+    public static void newTask(final String url, final TaskInterface taskInterface) {
+        Log.e("Remote", "==== newTask");
+        new AsyncTask<String, Void, String>() {
 
+            @Override
+            protected String doInBackground(String... params) {
+                Log.e("Remote", "==========================doInBackground");
+                Log.e("Remote", "==== params[0] : " + params[0]);
+                String result = "";
+                try {
+                    result = getData(params[0]);
+                    Log.i("REMOTE ; NETWORK ===== url : ", result);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                Log.e("Remote", "================= onPostExecute");
+                taskInterface.exectue(result, url);
+            }
+        }.execute(url);
+    }
+}
 
 
