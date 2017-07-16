@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 17 03:22:26 KST 2017
+#Mon Jul 17 03:49:46 KST 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/resources-debug.ap_/res/layout-v17/notification_template_lines_media.xml
 14.set=ANDROID_RESOURCE

@@ -1,6 +1,8 @@
 package com.example.junhee.weatherparse.activity;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -506,32 +508,10 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
     }
 
     private void setProgressBar() {
-
         String current = DateHandler.changeKK();
         final int intCurrent = Integer.parseInt(current);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        for(int i=0; i <= intCurrent; i++){
-                            progressBar.setProgress(intCurrent);
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-
-                    }
-                });
-            }
-        }).start();
-
-
+        progressBar.getProgressDrawable().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
+        progressBar.setProgress(intCurrent);
     }
 
     @Override
