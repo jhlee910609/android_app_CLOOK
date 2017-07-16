@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.junhee.weatherparse.util.weatherParser.WeatherParser.type;
 
 /**
  * Created by JunHee on 2017. 7. 9..
@@ -29,7 +25,7 @@ public class Remote {
         con.setRequestMethod("GET");
         // 1. 분기한다...
         if (url.contains("skplanetx")) {
-            con.setRequestProperty("appKey", "2824ebc2-dd6d-318c-baa6-3cc11f6508b7");
+            con.setRequestProperty("appKey", "64df5102-cf08-332f-b749-0d30ca8e4c07");
             con.setRequestProperty("Accept", "application/json");
         }
         int responseCode = con.getResponseCode();

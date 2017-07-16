@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherParse</string>
+    <string name="app_name">CLOOK</string>
     <string name="intro_title">날씨와 스타일을 책임지는 데일리 날씨 앱</string>
     <string name="spinner_gender_prompt">탕신의 성별을 선택하시오.</string>
     <string name="spinner_age_prompt">당신의 연령대를 선택하시오.</string>
@@ -11,6 +11,8 @@
     <string name="main_time_18">오후 6시</string>
     <string name="main_time_21">오후 9시</string>
     <string name="main_time_tomo">내일 오전</string>
+    <string name="dia_loc_title">지역 변경</string>
+    <string name="locdia_loc_hint"><font size="14">원하는 지역을 검색하세요.</font></string>
 
     <string-array name="intro_gender">
         <item>남자</item>

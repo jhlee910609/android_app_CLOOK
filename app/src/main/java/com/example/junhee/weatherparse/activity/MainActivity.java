@@ -2,14 +2,13 @@ package com.example.junhee.weatherparse.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.example.junhee.weatherparse.R;
 import com.example.junhee.weatherparse.adapter.ViewPagerAdapter;
-import com.example.junhee.weatherparse.domain.UserInfo;
 import com.example.junhee.weatherparse.presenter.FashionDetailFragment;
 import com.example.junhee.weatherparse.presenter.MainFragment;
 import com.example.junhee.weatherparse.util.Const;
@@ -65,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             mainFragment.mainImg.setImageResource(Const.ImgResIconID.IMG_FEMALE);
         }
     }
+
+
 
 
     private void setBackCloseHandler() {

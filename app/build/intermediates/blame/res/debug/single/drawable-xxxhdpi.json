@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/style_buy_wm_sun_1.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/style_buy_wm_sun_1.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_topten.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_topten.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_topshop.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_topshop.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_zara_wm.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_zara_wm.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_zara_m.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_zara_m.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_hconnect.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_hconnect.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_mixxo.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_mixxo.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_8sc.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_8sc.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/img_main_female.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/img_main_female.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/main_female_rain.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/main_female_rain.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/style_buy_wm_sun_3.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/style_buy_wm_sun_3.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_uniqlo.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_uniqlo.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/banner_hnm.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/banner_hnm.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/style_buy_wm_sun_2.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/style_buy_wm_sun_2.png"
+    },
+    {
+        "merged": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/img_main_male.png",
+        "source": "/Users/JunHee/AndroidStudioProjects/WeatherParse/app/src/main/res/drawable-xxxhdpi/img_main_male.png"
+    }
+]
