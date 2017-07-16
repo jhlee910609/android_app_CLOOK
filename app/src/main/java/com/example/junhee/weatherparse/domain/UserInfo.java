@@ -8,8 +8,12 @@ public class UserInfo {
 
     private String selectedGender = "";
     private String selectedAge = "";
-    private double currentLat = 0;
-    private double currentLon = 0;
+
+    private String currentLat = "";
+    private String currentLon = "";
+
+    private String currentX = "";
+    private String currentY = "";
 
     private static UserInfo instance = null;
 
@@ -37,20 +41,36 @@ public class UserInfo {
         this.selectedAge = selectedAge;
     }
 
-    public double getCurrentLat() {
+    public String getCurrentLat() {
         return currentLat;
     }
 
-    public void setCurrentLat(double currentLat) {
+    public void setCurrentLat(String currentLat) {
         this.currentLat = currentLat;
     }
 
-    public double getCurrentLon() {
+    public String getCurrentLon() {
         return currentLon;
     }
 
-    public void setCurrentLon(double currentLon) {
+    public void setCurrentLon(String currentLon) {
         this.currentLon = currentLon;
+    }
+
+    public String getCurrentX() {
+        return currentX;
+    }
+
+    public void setCurrentX(String currentX) {
+        this.currentX = currentX;
+    }
+
+    public String getCurrentY() {
+        return currentY;
+    }
+
+    public void setCurrentY(String currentY) {
+        this.currentY = currentY;
     }
 
     @Override
@@ -58,8 +78,10 @@ public class UserInfo {
         return "UserInfo{" +
                 "selectedGender='" + selectedGender + '\'' +
                 ", selectedAge='" + selectedAge + '\'' +
-                ", currentLat=" + currentLat +
-                ", currentLon=" + currentLon +
+                ", currentLat='" + currentLat + '\'' +
+                ", currentLon='" + currentLon + '\'' +
+                ", currentX='" + currentX + '\'' +
+                ", currentY='" + currentY + '\'' +
                 '}';
     }
 }

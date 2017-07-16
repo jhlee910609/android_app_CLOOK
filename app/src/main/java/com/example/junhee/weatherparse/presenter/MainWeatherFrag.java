@@ -20,7 +20,6 @@ import com.example.junhee.weatherparse.domain.dailyWeather.Items;
 import com.example.junhee.weatherparse.domain.dailyWeather.Response;
 import com.example.junhee.weatherparse.domain.dailyWeather.WeatherData;
 import com.example.junhee.weatherparse.util.Const;
-import com.example.junhee.weatherparse.util.DateHandler;
 import com.example.junhee.weatherparse.util.weatherParser.ConverJson;
 import com.example.junhee.weatherparse.util.weatherParser.Remote;
 import com.example.junhee.weatherparse.util.weatherParser.TaskInterface;
@@ -43,6 +42,7 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     private String x = "61";
     private String y = "125";
 
+    // TODO 바꿈 ======================
     public static String baseDate = "20170716";
     Weather3hr weather3hr = Weather3hr.getInstance();
 
@@ -83,10 +83,11 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     }
 
     private void getDataFromNet() {
-        fcstFromCurrent = setKmaUri(DateHandler.changerYyyyMMdd(), x, y);
+        // TODO =========== 바꿔야함!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        fcstFromCurrent = setKmaUri(baseDate, x, y);
         Log.e("MainWeatherFrag", "fcstFromCurrent : " + fcstFromCurrent);
-        Remote.newTask(fcstFromCurrent, this);
         Log.e("MainWeatherFrag", " x : " + x + ", y : " + y);
+        Remote.newTask(fcstFromCurrent, this);
     }
 
     private void initWidget() {
@@ -175,10 +176,10 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
 
     @Override
     public void shareValue(GeoInfo geoInfo) {
-//        x = geoInfo.getX();
-//        y = geoInfo.getY();
-//        Log.e("MainWeatherFrag", geoInfo.toString());
-////        getDataFromNet();
+        x = geoInfo.getX();
+        y = geoInfo.getY();
+        Log.e("MainWeatherFrag", geoInfo.toString());
+        getDataFromNet();
     }
 }
 

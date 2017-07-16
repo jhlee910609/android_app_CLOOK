@@ -23,6 +23,11 @@ public class DateHandler {
         return sdf.format(new Date(now));
     }
 
+    public static String changeKK(){
+        SimpleDateFormat sdf = new SimpleDateFormat("kk");
+        return sdf.format(new Date(now));
+    }
+
     public static String changerHHmm() {
 
         SimpleDateFormat sdf = new SimpleDateFormat("HHmm");

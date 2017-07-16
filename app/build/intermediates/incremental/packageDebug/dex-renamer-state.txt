@@ -1,4 +1,4 @@
-#Mon Jul 17 00:03:10 KST 2017
+#Mon Jul 17 03:22:28 KST 2017
 base.0=/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b3de30c250098f20c09ca1bc3e5d42e09d8236a6
 renamed.1=classes.dex
 renamed.0=classes2.dex

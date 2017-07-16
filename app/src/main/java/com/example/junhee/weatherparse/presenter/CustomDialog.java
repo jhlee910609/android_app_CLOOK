@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -84,13 +85,6 @@ public class CustomDialog extends Dialog {
         mListner.shareValue(geoInfo);
     }
 
-    private void getDataFrom() {
-//        int position = adapter.getPosition();
-//        GeoInfo geoInfo = cityList.get(position);
-//        cityLat = geoInfo.getLat();
-//        cityLon = geoInfo.getLon();
-//        Log.e("CustomDialog", geoInfo.toString());
-    }
 
     private void setData() {
         cityList = new ArrayList<>();
@@ -140,6 +134,7 @@ public class CustomDialog extends Dialog {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mPosition = position;
                 Toast.makeText(context, "[" + cityList.get(position).getCityName() + "]가 선택되었습니다.", Toast.LENGTH_SHORT).show();
+                Log.e("CustomDialog", "============= setMListeer()");
                 setMListner();
                 dismiss();
             }

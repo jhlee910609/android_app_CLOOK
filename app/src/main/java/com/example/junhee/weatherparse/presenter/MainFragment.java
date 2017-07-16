@@ -280,15 +280,21 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
 
     @Override
     public void shareValue(GeoInfo geoInfo) {
+        Log.e("MainFragment", " ========== shareValue");
+        UserInfo userInfo = UserInfo.getInstance();
         currentLat = geoInfo.getLat();
         currentLon = geoInfo.getLon();
-        if(mainWeatherFrag != null) {
+        userInfo.setCurrentLat(currentLat);
+        userInfo.setCurrentLon(currentLon);
+        userInfo.setCurrentX(geoInfo.getX());
+        userInfo.setCurrentY(geoInfo.getY());
+        Log.e("MainFragment", userInfo.toString());
 
+        if (mainWeatherFrag != null) {
             mainWeatherFrag.setX(geoInfo.getX());
             mainWeatherFrag.setY(geoInfo.getY());
             Log.e("MainFragment", geoInfo.toString());
         }
-
         getDataFromNet();
         selectCity.setText(geoInfo.getCityName());
     }

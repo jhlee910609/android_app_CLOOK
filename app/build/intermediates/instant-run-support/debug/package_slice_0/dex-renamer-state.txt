@@ -1,4 +1,4 @@
-#Mon Jul 17 00:03:10 KST 2017
+#Mon Jul 17 00:56:59 KST 2017
 base.0=/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0
 renamed.0=classes.dex
 file.0=/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex

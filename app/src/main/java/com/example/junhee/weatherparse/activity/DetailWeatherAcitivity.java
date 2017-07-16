@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -43,6 +44,7 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
     // =========================== [ 메인 날씨 위젯 ] =============================
     TextView detailCurrentTime, detailWeekName, detailCityName, detailCurrentTemp;
     ImageView detailCurrentImg;
+    ProgressBar progressBar;
 
 
     // =========================== [시간대별 날씨 위젯] =============================
@@ -85,12 +87,13 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         initWidget();
         getDataFromNet();
         updateUi();
+        setProgressBar();
 
         btnBack = (ImageView) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
     }
 
-    private void getDataFromNet(){
+    private void getDataFromNet() {
 
         tenDaysUrl = WeatherParser.setSk6daysUri(x, y);
         discomfortUrl = WeatherParser.setDiscomfortUri(DateHandler.changeYyyyMMddHH());
@@ -174,6 +177,8 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
         dustDegree = (TextView) findViewById(R.id.txt_detail_dust);
         dustTxt = (TextView) findViewById(R.id.txt_detail_dust_kr);
+
+        progressBar = (ProgressBar) findViewById(R.id.moonProgress);
     }
 
     private void updateUi() {
@@ -498,6 +503,35 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
             result = "낮음";
         }
         return result;
+    }
+
+    private void setProgressBar() {
+
+        String current = DateHandler.changeKK();
+        final int intCurrent = Integer.parseInt(current);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(int i=0; i <= intCurrent; i++){
+                            progressBar.setProgress(intCurrent);
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+
+                    }
+                });
+            }
+        }).start();
+
+
     }
 
     @Override

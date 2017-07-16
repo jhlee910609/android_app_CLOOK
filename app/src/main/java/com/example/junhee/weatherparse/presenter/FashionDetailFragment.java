@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.junhee.weatherparse.R;
 import com.example.junhee.weatherparse.activity.GoToMallActivity;
+import com.example.junhee.weatherparse.domain.UserInfo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,15 +55,19 @@ public class FashionDetailFragment extends Fragment {
         scrollView = (ScrollView) view.findViewById(R.id.fashion_detail_scroll);
     }
 
-    private void initImg(){
-        Glide.with(getContext())
-                .load(R.mipmap.img_wm_sun)
-                .into(fashionImg);
+    private void initImg() {
+        if (UserInfo.getInstance().getSelectedGender() == "female") {
+            Glide.with(getContext())
+                    .load(R.drawable.style_wm_sun)
+                    .into(fashionImg);
+        } else {
+            Glide.with(getContext())
+                    .load(R.drawable.style_m_sun)
+                    .into(fashionImg);
+        }
     }
 
-
-
-    private void setOnClick(){
+    private void setOnClick() {
         imgFilter.setClickable(true);
         imgFilter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +85,4 @@ public class FashionDetailFragment extends Fragment {
             }
         });
     }
-
 }
