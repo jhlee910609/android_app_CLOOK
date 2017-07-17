@@ -132,7 +132,6 @@ public class IntroActivity extends AppCompatActivity {
                 }
             }
 
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 

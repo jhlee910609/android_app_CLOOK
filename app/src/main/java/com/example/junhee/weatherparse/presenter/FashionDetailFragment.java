@@ -26,6 +26,7 @@ public class FashionDetailFragment extends Fragment {
     private TextView showDetail;
     private View view = null;
     private ScrollView scrollView;
+    private FilterDialog mDialog;
 
     public FashionDetailFragment() {
         // Required empty public constructor
@@ -73,6 +74,10 @@ public class FashionDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "click filter", Toast.LENGTH_SHORT).show();
+                mDialog = new FilterDialog(getActivity());
+                mDialog.setContentView(R.layout.layout_filter);
+                mDialog.show();
+
             }
         });
 

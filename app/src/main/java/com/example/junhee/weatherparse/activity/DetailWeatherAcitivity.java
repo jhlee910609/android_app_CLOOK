@@ -41,7 +41,7 @@ import com.tsengvn.typekit.TypekitContextWrapper;
 
 import static java.lang.Integer.parseInt;
 
-public class DetailWeatherAcitivity extends AppCompatActivity implements View.OnClickListener, TaskInterface, CustomDialog.CustomDiaListner {
+public class DetailWeatherAcitivity extends AppCompatActivity implements View.OnClickListener, TaskInterface, CustomDialog.CustomDiaListener {
 
     // =========================== [ 메인 날씨 위젯 ] =============================
     TextView detailCurrentTime, detailWeekName, detailCityName, detailCurrentTemp;
@@ -106,7 +106,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         Remote.newTask(discomfortUrl, this);
         Remote.newTask(dustUrl, this);
         Remote.newTask(currentWeather, this);
-
     }
 
     private void initWidget() {

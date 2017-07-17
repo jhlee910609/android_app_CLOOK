@@ -6,37 +6,49 @@
     density="560dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1500253487101"
+    timestamp="1500315228868"
     token="-9019761529076938046"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="346" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="23" />
+        duration="0" />
     <task
         name="verifier"
-        duration="2" />
+        duration="0" />
 
     <artifact
-        location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
+        location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/outputs/apk/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1500253459113"
+        timestamp="1500314739238"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
@@ -47,34 +59,30 @@
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1500253487101"
+        timestamp="1500315004530"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1500315228868"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/JunHee/AndroidStudioProjects/WeatherParse/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

@@ -36,7 +36,10 @@ import com.example.junhee.weatherparse.util.weatherParser.TaskInterface;
 import static com.example.junhee.weatherparse.util.weatherParser.WeatherParser.setRadiUri;
 import static com.example.junhee.weatherparse.util.weatherParser.WeatherParser.setSkCurrentUri;
 
-public class MainFragment extends Fragment implements TaskInterface, CustomDialog.CustomDiaListner {
+/**
+ *
+ */
+public class MainFragment extends Fragment implements TaskInterface, CustomDialog.CustomDiaListener {
 
     private String selectedAge = "";
     private String selectedGender = "";
@@ -92,7 +95,7 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
         return view;
     }
 
-    private void getDataFromNet() {
+    public void getDataFromNet() {
         currentSkUrl = setSkCurrentUri(currentLat, currentLon);
         Log.e("Mainfragment", "============== currentSkUrl : " + currentSkUrl);
         currentRadiUrl = setRadiUri(DateHandler.changeYyyyMMddHH());
@@ -112,6 +115,9 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
         });
     }
 
+    /**
+     * 나는 머하는 놈이요~~
+     */
     private void showLocDialog() {
 
         mCustomDialog = new CustomDialog(getActivity(), this);
@@ -180,22 +186,27 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
         super.onResume();
     }
 
+    /**
+     * 데이터를 받아 온 후, Widget setting까지 완료
+     *
+     * @param jsonResult : 통신 후, Response 받은 jsonString
+     * @param url        : url 분기를 위해 Request url도 받아옴
+     * currentRadiUrl의 경우, 일몰 후 "" 값이 넘어 오기 때문에 예외처리 -> "-"로 표기
+     */
+
     @Override
     public void exectue(String jsonResult, String url) {
 
         if (url.equals(currentSkUrl)) {
-
             CurrentWeather fcstcastFromcurrent = ConverJson.JsonToSkCurrent(jsonResult);
             Weather weather = fcstcastFromcurrent.getWeather();
             Hourly[] hourlies = weather.getHourly();
             temperature = hourlies[0].getTemperature();
             sky = hourlies[0].getSky();
             setHourlyImgFromCode(sky.getCode(), mainWeatherImg);
-            Log.e("Mainfragment", "temperature : " + temperature);
             updateMainUi();
 
         } else if (url.equals(currentRadiUrl)) {
-
             RadiDate radiDate = ConverJson.JsonToRadiDate(jsonResult);
             if (radiDate != null && !"".equals(radiDate)) {
                 com.example.junhee.weatherparse.domain.radiData.Response response = radiDate.getResponse();
@@ -278,24 +289,23 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
                 .into(img);
     }
 
+    /**
+     * @param geoInfo : CustomDialog를 통해 받아온 GeoInfo(지역에 따른 좌표 정보를 담은 클래스)객체를 넘겨 받음
+     * 받아온 geoInfo 좌표를 기반으로 다시 REST 통신 시도
+     */
     @Override
     public void shareValue(GeoInfo geoInfo) {
-        Log.e("MainFragment", " ========== shareValue");
         UserInfo userInfo = UserInfo.getInstance();
         currentLat = geoInfo.getLat();
         currentLon = geoInfo.getLon();
-        userInfo.setCurrentLat(currentLat);
-        userInfo.setCurrentLon(currentLon);
-        userInfo.setCurrentX(geoInfo.getX());
-        userInfo.setCurrentY(geoInfo.getY());
-        Log.e("MainFragment", userInfo.toString());
+        userInfo.setCurrentLatLon(currentLat, currentLon);
+        userInfo.setCurrentXY(geoInfo.getX(), geoInfo.getY());
 
-        if (mainWeatherFrag != null) {
-            mainWeatherFrag.setX(geoInfo.getX());
-            mainWeatherFrag.setY(geoInfo.getY());
-            Log.e("MainFragment", geoInfo.toString());
-        }
+        mainWeatherFrag.setXY(geoInfo.getX(), geoInfo.getY());
+        Log.e("mainWeatherFrag", " x : " + mainWeatherFrag.getX() + ", y : " + mainWeatherFrag.getY());
+
         getDataFromNet();
+        mainWeatherFrag.getDataFromNet();
         selectCity.setText(geoInfo.getCityName());
     }
 }

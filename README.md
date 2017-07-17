@@ -201,3 +201,9 @@ public class Weather3hr {
 ## 2. Vertical ViewPager
 
 - 메인 화면에 사용된 Vertical ViewPager는 `me.kaelaela:verticalviewpager:1.0.0@aar`라이브러리를 통해 구현할 수 있었다.
+
+
+
+## 3. Advanced
+
+- viewPager 내부의 

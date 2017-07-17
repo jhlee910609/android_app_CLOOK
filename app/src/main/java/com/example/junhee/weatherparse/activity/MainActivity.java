@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mainFragment = new MainFragment();
         setContentView(R.layout.activity_main);
         getBundle();
+        setFashionImg();
         setBackCloseHandler();
         setFragment();
         setViewPager();
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             selectedGender = bundle.getString(IntroActivity.SELECTED_GENDER);
             Log.e("Main", "=========== selectedGender : " + selectedGender);
         }
-        setFashionImg();
     }
 
     private void setFashionImg() {
@@ -64,9 +64,6 @@ public class MainActivity extends AppCompatActivity {
             mainFragment.mainImg.setImageResource(Const.ImgResIconID.IMG_FEMALE);
         }
     }
-
-
-
 
     private void setBackCloseHandler() {
         backCloseHandler = new BackCloseHandler(this);

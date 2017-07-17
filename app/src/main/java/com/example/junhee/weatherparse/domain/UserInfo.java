@@ -45,24 +45,22 @@ public class UserInfo {
         return currentLat;
     }
 
-    public void setCurrentLat(String currentLat) {
+    public void setCurrentLatLon(String currentLat, String currentLon) {
         this.currentLat = currentLat;
+        this.currentLon = currentLon;
     }
 
     public String getCurrentLon() {
         return currentLon;
     }
 
-    public void setCurrentLon(String currentLon) {
-        this.currentLon = currentLon;
-    }
-
     public String getCurrentX() {
         return currentX;
     }
 
-    public void setCurrentX(String currentX) {
+    public void setCurrentXY(String currentX, String currentY) {
         this.currentX = currentX;
+        this.currentY = currentY;
     }
 
     public String getCurrentY() {

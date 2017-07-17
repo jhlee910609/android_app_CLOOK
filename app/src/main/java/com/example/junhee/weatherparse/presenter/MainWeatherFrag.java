@@ -20,7 +20,6 @@ import com.example.junhee.weatherparse.domain.dailyWeather.Items;
 import com.example.junhee.weatherparse.domain.dailyWeather.Response;
 import com.example.junhee.weatherparse.domain.dailyWeather.WeatherData;
 import com.example.junhee.weatherparse.util.Const;
-import com.example.junhee.weatherparse.util.DateHandler;
 import com.example.junhee.weatherparse.util.weatherParser.ConverJson;
 import com.example.junhee.weatherparse.util.weatherParser.Remote;
 import com.example.junhee.weatherparse.util.weatherParser.TaskInterface;
@@ -33,7 +32,8 @@ import static com.example.junhee.weatherparse.util.weatherParser.WeatherParser.s
  * 2. activity
  * 3.
  */
-public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDialog.CustomDiaListner {
+
+public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDialog.CustomDiaListener {
 
     View view = null;
     ImageView imgSky1, imgSky2, imgSky3, imgSky4, imgSky5, imgSky6;
@@ -44,7 +44,7 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     private String y = "125";
 
     // TODO 바꿈 ======================
-    public static String baseDate = DateHandler.changerYyyyMMdd();
+    public static String baseDate = "20170717";
     Weather3hr weather3hr = Weather3hr.getInstance();
 
     public MainWeatherFrag() {
@@ -55,17 +55,15 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
         return x;
     }
 
-    public void setX(String x) {
+    public void setXY(String x, String y) {
         this.x = x;
+        this.y = y;
     }
 
     public String getY() {
         return y;
     }
 
-    public void setY(String y) {
-        this.y = y;
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -83,7 +81,12 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
         return view;
     }
 
-    private void getDataFromNet() {
+    /**
+     * Request Url setting
+     * REST 통신 시도
+     */
+
+    public void getDataFromNet() {
         // TODO =========== 바꿔야함!!!!!!!!!!!!!!!!!!!!!!!!!!!
         fcstFromCurrent = setKmaUri(baseDate, x, y);
         Log.e("MainWeatherFrag", "fcstFromCurrent : " + fcstFromCurrent);
@@ -150,12 +153,16 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
                 resId = Const.ImgResIconID.SKY_STATUS_FOGGY;
                 break;
         }
-
         Glide.with(getContext())
                 .load(resId)
                 .into(img);
     }
 
+    /**
+     * @param jsonResult : 통신 후, Response 받은 jsonString
+     * @param url : 분기를 위해 Request url도 받아옴
+     * 데이터를 받아 온 후, Widget setting까지 완료
+     */
     @Override
     public void exectue(String jsonResult, String url) {
         if (url.equals(fcstFromCurrent)) {
@@ -163,8 +170,10 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
             Response response = weatherData.getResponse();
             Body body = response.getBody();
             Items items = body.getItems();
-            Item [] item = items.getItem();
+            Item[] item = items.getItem();
             Log.e("MainWeatherFrag", "=== fcstFromCurrent : " + url.toString());
+            // TODO 받아온 데이터 셋팅 전, hashMap<>(); 비우기
+            weather3hr.weathers3hr.clear();
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_01);
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_02);
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_03);
@@ -172,8 +181,14 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_05);
             weather3hr.setDatasFromKma(item, (Integer.parseInt(baseDate) + 1) + "", Const.ForecstTime.FCST_06);
         }
+        Log.e("MainWeatherFrag", "=================== execute();");
         setMainUi();
     }
+
+    /**
+     * @param geoInfo : CustomDialog를 통해 받아온 GeoInfo(지역에 따른 좌표 정보를 담은 클래스)객체를 넘겨 받음
+     * 받아온 geoInfo 좌표를 기반으로 다시 REST 통신 시도
+     */
 
     @Override
     public void shareValue(GeoInfo geoInfo) {
