@@ -20,6 +20,7 @@ import com.example.junhee.weatherparse.domain.dailyWeather.Items;
 import com.example.junhee.weatherparse.domain.dailyWeather.Response;
 import com.example.junhee.weatherparse.domain.dailyWeather.WeatherData;
 import com.example.junhee.weatherparse.util.Const;
+import com.example.junhee.weatherparse.util.DateHandler;
 import com.example.junhee.weatherparse.util.weatherParser.ConverJson;
 import com.example.junhee.weatherparse.util.weatherParser.Remote;
 import com.example.junhee.weatherparse.util.weatherParser.TaskInterface;
@@ -43,7 +44,7 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     private String y = "125";
 
     // TODO 바꿈 ======================
-    public static String baseDate = "20170716";
+    public static String baseDate = DateHandler.changerYyyyMMdd();
     Weather3hr weather3hr = Weather3hr.getInstance();
 
     public MainWeatherFrag() {

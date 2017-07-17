@@ -1,11 +1,21 @@
-# HandlingWeatherApi
+# 일기예보 기반 패션 정보 APP - CLOOK
 
-### 1. SK Planet Weather API (이하 planet api)
+> Open API 파싱 연습 및 Fragment control 연습을 위해 날씨 앱을 개발해보기로 했다.
+> 약간의 차별성을 갖기 위해 '패션'이라는 소재를 가미했다.
 
-- Firebase 기반 프로젝트 진행 전, 기상 API parsing 연습을 하였다.
-- 기상청, Open Weather 등 다양한 기상 관련 Open API가 있지만 SK Planet에서 제공하는 기상 API를 사용하기로 결정했다.
+- [CLOOK 플로우 차트 보기](https://www.slideshare.net/secret/5aLvyGDSVFLnxL)
+
+
+
+## 1. 일기예보 Parsing
+
+### 1. API 준비하기 (SK Planet weather API, 기상청 API)
+
+- Firebase 기반 프로젝트 진행 전, 기상 API를 알아보았다.
+- 기상청, Open Weather(세계 기상), Yahoo 등 다양한 기상 관련 Open API가 있지만 [SK Planet weatherI](https://developers.skplanetx.com/develop/self-console/)에서 제공하는 기상 API를 사용하기로 결정했다.
 - Network Lib를 사용하지 않고, 공부를 위해 `HttpUrlConnection(defaul class)`를 사용했다. 
-- [SK Planet weather API](https://developers.skplanetx.com/develop/self-console/)
+
+
 
 
 
@@ -25,8 +35,8 @@
 
 ##### 1.3. 해당 데이터의 형태를 분석한다.
 
-- 기상정보가 굉장히 다양하기 때문에 JSON 데이터 구조가 상당히 복잡하다. 초기에 JSON 구조대로 class를 설계했는데 무수히 많은 inner class가 생성됐다. 우선… 가독성이 떨어지고 내가 헷갈려서 모두 삭제해버렸다.
-- 이런 상황을 위해 두 가지 사이트를 미리 검색해놓았다.
+- 기상정보가 굉장히 다양하기 때문에 JSON 데이터 구조가 상당히 복잡하다.
+- 이런 상황을 위해 두 가지 사이트를 구비해두었다.
   - [Code Beautify](https://codebeautify.org/) : 직관적으로 JSON 구조를 보여준다.
   - [Convert JSON to JAVA](http://pojo.sodhanalibrary.com/) : JSON 구조를 기반으로 Class 설계를 쉽게 해준다.
 
@@ -81,10 +91,97 @@
 
 
 
+> 기상청 API 구조는 아래와 같다.
+
+```java
+{
+	"response": {
+		"header": {
+			"resultCode": "0000",
+			"resultMsg": "OK"
+		},
+		"body": {
+			"items": {
+				"item": [
+					{
+						"baseDate": 20170716,
+						"baseTime": "0500",
+						"category": "POP",
+						"fcstDate": 20170716,
+						"fcstTime": "0900",
+						"fcstValue": 90,
+						"nx": 61,
+						"ny": 125
+					},
+					{
+						"baseDate": 20170716,
+						"baseTime": "0500",
+						"category": "PTY",
+						"fcstDate": 20170716,
+						"fcstTime": "0900",
+						"fcstValue": 1,
+						"nx": 61,
+						"ny": 125
+					},
+					{
+						"baseDate": 20170716,
+						"baseTime": "0500",
+						"category": "REH",
+						"fcstDate": 20170716,
+						"fcstTime": "0900",
+						"fcstValue": 90,
+						"nx": 61,
+						"ny": 125
+					},
+                  ]
+			},
+			"numOfRows": 10,
+			"pageNo": 1,
+			"totalCount": 225
+		}
+	}
+}
+```
+
+- 기상청 API 데이터를 분석해보니 가져온 데이터를 저장할 때, `fcstTime`을 기준으로 정리하여 데이터를 넣고 싶었다.
+- 그래서 `Weather3hr` 라는 클래스에`Map<key, Map<key, Item>>()` 형태로 저장하였다.
+
+```java
+public class Weather3hr {
+
+    private static Weather3hr instance;
+    public static Weather3hr getInstance() {
+        if (instance == null) {
+            Log.e("===", "create.........................");
+            instance = new Weather3hr();
+        }
+        return instance;
+    }
+
+    public static Map<String, Map<String, Item>> weathers3hr = new HashMap<>();
+
+  	// 기상청 api로부터 Weather3hr에 데이터 셋팅할 수 있도록 함수 작성
+    public void setDatasFromKma(Item[] items, String fcstDate, String fcstTime) {
+        Map<String, Item> categories = new HashMap<>();
+        for (Item tempItem : items) {
+            if (tempItem.getFcstDate().equals(fcstDate) && 			tempItem.getFcstTime().equals(fcstTime)) {
+                categories.put(tempItem.getCategory(), tempItem);
+                weathers3hr.put(tempItem.getFcstTime(), categories);
+            }
+        }
+    }
+
+  	// 예보시간과 기상정보의 종류를 key로 하여, 원하는 값을 꺼낼 수 있게 함수 작성
+    public String getFcstValue(String fcstTime, String category) {
+        return weathers3hr.get(fcstTime).get(category).getFcstValue();
+    }
+}
+```
+
 ##### 1.4. 모델링한 데이터를 기반으로 API 파싱에 돌입한다.
 
-- `Retrofit2`, `Okhttp` Lib 를 이용하면 조금 더 손쉽게 데이터를 파싱할 수 있다.
-- 하지만 이번 프로젝트에서는 공부를 위해 JAVA 내장 class인 `HttpUrlConnection`을 사용했다.
+- `Retrofit2`, `Okhttp` Lib 를 이용하면 조금 더 손쉽게 데이터를 파싱할 수 있지만 제공하는 API의 자료 형태에 따라 다를 수도 있겠다는 생각이 들었다.
+- 이번 프로젝트에서는 공부를 위해 JAVA 내장 class인 `HttpUrlConnection`을 사용했다.
 
 
 - Network 통신(Protocol : REST)을 통해 API 정보를 Parsing 한다.
@@ -100,3 +197,7 @@
 
 
 
+
+## 2. Vertical ViewPager
+
+- 메인 화면에 사용된 Vertical ViewPager는 `me.kaelaela:verticalviewpager:1.0.0@aar`라이브러리를 통해 구현할 수 있었다.
