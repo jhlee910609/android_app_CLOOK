@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/intro_backgroound_white"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="280dp"
+        android:layout_height="270dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:text="을 할 예정입니다."
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_activity"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner_activity" />
+
+        <Spinner
+            android:id="@+id/spinner_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="22dp"
+            android:entries="@array/activity"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <Spinner
+            android:id="@+id/spinner_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginStart="8dp"
+            android:entries="@array/location"
+            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintLeft_toRightOf="@+id/textView16"
+            app:layout_constraintRight_toLeftOf="@+id/textView17"
+            app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="56dp"
+            android:text="나는 오늘"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:text="맞춤 스타일 제안"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:text="에서"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_location"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner_location" />
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_close" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="28dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_activity"
+            app:srcCompat="@mipmap/icon_btn_search" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

@@ -7,7 +7,7 @@
 
 
 
-## 1. 일기예보 Parsing
+## 일기예보 Parsing
 
 ### 1. API 준비하기 (SK Planet weather API, 기상청 API)
 
@@ -198,12 +198,12 @@ public class Weather3hr {
 
 
 
-## 2. Vertical ViewPager
+## Vertical ViewPager
 
 - 메인 화면에 사용된 Vertical ViewPager는 `me.kaelaela:verticalviewpager:1.0.0@aar`라이브러리를 통해 구현할 수 있었다.
 
 
 
-## 3. Advanced
+## Advanced
 
 - viewPager 내부의 

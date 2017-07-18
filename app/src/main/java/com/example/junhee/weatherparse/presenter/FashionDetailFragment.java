@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.junhee.weatherparse.R;
 import com.example.junhee.weatherparse.activity.GoToMallActivity;
+import com.example.junhee.weatherparse.dialog.FilterDialog;
 import com.example.junhee.weatherparse.domain.UserInfo;
 
 /**

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="location">
+        <item>놀이공원</item>
+        <item>바다</item>
+        <item>한강</item>
+        <item>시내</item>
+        <item>계곡/산</item>
+    </array>
+
+    <array name="activity">
+        <item>데이트</item>
+        <item>피크닉</item>
+        <item>여행</item>
+        <item>휴식</item>
+    </array>
+</resources>
