@@ -51,8 +51,9 @@ public class GeoInfo {
         return x;
     }
 
-    public void setX(String x) {
+    public void setXY(String x, String y) {
         this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -68,9 +69,5 @@ public class GeoInfo {
 
     public String getY() {
         return y;
-    }
-
-    public void setY(String y) {
-        this.y = y;
     }
 }

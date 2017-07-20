@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.junhee.weatherparse.R;
 import com.example.junhee.weatherparse.domain.GeoInfo;
+import com.example.junhee.weatherparse.domain.UserInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,10 +78,11 @@ public class CustomDialog extends Dialog {
         setFilerOnEdit();
     }
 
-
-
     private void setMListner() {
         GeoInfo geoInfo = cityList.get(mPosition);
+        UserInfo.getInstance().setCurrentLatLon(geoInfo.getLat(), geoInfo.getLon());
+        UserInfo.getInstance().setCurrentXY(geoInfo.getX(), geoInfo.getY());
+        UserInfo.getInstance().setCurrentCity(geoInfo.getCityName());
         mListner.shareValue(geoInfo);
     }
 

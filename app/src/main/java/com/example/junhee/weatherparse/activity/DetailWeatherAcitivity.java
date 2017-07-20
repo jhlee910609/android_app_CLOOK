@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.junhee.weatherparse.R;
 import com.example.junhee.weatherparse.domain.GeoInfo;
+import com.example.junhee.weatherparse.domain.UserInfo;
 import com.example.junhee.weatherparse.domain.Weather3hr;
 import com.example.junhee.weatherparse.domain.discomfortData.Body;
 import com.example.junhee.weatherparse.domain.discomfortData.DiscomfortData;
@@ -77,8 +78,9 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
     String currentWeather = "";
 
     // 신사역 x,y 좌표
-    String x = 60 + "";
-    String y = 127 + "";
+    String x = UserInfo.getInstance().getCurrentX();
+    String y = UserInfo.getInstance().getCurrentY();
+    String currentCity = UserInfo.getInstance().getCurrentCity();
 
     @Override
 
@@ -372,9 +374,10 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
     }
 
-
+    // TODO ====== [ 아래 함수로 빼기 ]
     @Override
     public void exectue(String jsonResult, String url) {
+
         if (url.equals(tenDaysUrl)) {
             tendays = ConverJson.JsonTo6Days(jsonResult);
             Log.e("DetailWeather, execute() : ", tendays.toString());
@@ -415,6 +418,7 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
             com.example.junhee.weatherparse.domain.skCurrentWeather.Temperature temp = hourlies[0].getTemperature();
             com.example.junhee.weatherparse.domain.skCurrentWeather.Sky sky = hourlies[0].getSky();
 
+            detailCityName.setText(currentCity);
             detailCurrentTemp.setText(temp.getTc() + Const.SpecialChar.CELSIUS);
             detailCurrentTime.setText(DateHandler.getCurrentTime());
             detailWeekName.setText(DateHandler.getWeekName());
@@ -513,10 +517,12 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         progressBar.setProgress(intCurrent);
     }
 
+
+
     @Override
     public void shareValue(GeoInfo geoInfo) {
-        x = geoInfo.getX();
-        y = geoInfo.getY();
-        detailCityName.setText(geoInfo.getCityName());
+//        x = geoInfo.getX();
+//        y = geoInfo.getY();
+//        detailCityName.setText(geoInfo.getCityName());
     }
 }

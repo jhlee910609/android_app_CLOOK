@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.junhee.weatherparse.adapter.FilterAdapter;
 import com.example.junhee.weatherparse.R;
+import com.example.junhee.weatherparse.adapter.FilterAdapter;
 
 /**
  * Created by JunHee on 2017. 7. 18..
@@ -53,16 +53,8 @@ public class FilterDialog extends Dialog {
     }
 
     public void setSpinner(){
-//        ArrayAdapter<CharSequence> locAdapter = ArrayAdapter.createFromResource(mContext, R.array.location, android.R.layout.simple_spinner_item);
-//        ArrayAdapter<CharSequence> actAdapter = ArrayAdapter.createFromResource(mContext, R.array.activity, android.R.layout.simple_spinner_item);
-
-
-//        locAdapter.setDropDownViewResource(R.layout.spinner_list);
-//        actAdapter.setDropDownViewResource(R.layout.spinner_list);
         spinnerLoc.setAdapter(new FilterAdapter(mContext, R.layout.spinner_list, location));
         spinnerAct.setAdapter(new FilterAdapter(mContext, R.layout.spinner_list, activity));
-
-
         spinnerAct.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -74,7 +66,6 @@ public class FilterDialog extends Dialog {
 
             }
         });
-
         spinnerLoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

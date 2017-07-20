@@ -22,7 +22,7 @@ public class GoToMallActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_go_to_mall_activityu);
+        setContentView(R.layout.activity_go_to_mall_activity);
 
         initWidget();
         initImg();

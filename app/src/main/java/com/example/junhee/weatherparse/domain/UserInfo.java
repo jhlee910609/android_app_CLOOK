@@ -9,11 +9,13 @@ public class UserInfo {
     private String selectedGender = "";
     private String selectedAge = "";
 
-    private String currentLat = "";
-    private String currentLon = "";
+    private String currentCity = "서울특별시";
+    private String currentLat = "37.566481";
+    private String currentLon = "126.977925";
 
-    private String currentX = "";
-    private String currentY = "";
+    private String currentX = "60";
+    private String currentY = "127";
+
 
     private static UserInfo instance = null;
 
@@ -67,8 +69,12 @@ public class UserInfo {
         return currentY;
     }
 
-    public void setCurrentY(String currentY) {
-        this.currentY = currentY;
+    public String getCurrentCity() {
+        return currentCity;
+    }
+
+    public void setCurrentCity(String currentCity) {
+        this.currentCity = currentCity;
     }
 
     @Override

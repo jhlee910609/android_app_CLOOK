@@ -139,7 +139,6 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
         time = (TextView) view.findViewById(R.id.main_CurrentTime);
         mainImg = (ImageView) view.findViewById(R.id.main_illust);
         mainWeatherImg = (ImageView) view.findViewById(R.id.main_img_skyStatus);
-//        updateMainUi();
     }
 
     private void setFragment() {
@@ -155,6 +154,10 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DetailWeatherAcitivity.class);
+//                Bundle extra = new Bundle();
+//                extra.putString("currentLat", currentLat);
+//                extra.putString("currentLont", currentLon);
+//                intent.putExtras(extra);
                 v.getContext().startActivity(intent);
             }
         });
@@ -298,6 +301,7 @@ public class MainFragment extends Fragment implements TaskInterface, CustomDialo
         UserInfo userInfo = UserInfo.getInstance();
         currentLat = geoInfo.getLat();
         currentLon = geoInfo.getLon();
+        userInfo.setCurrentCity(geoInfo.getCityName());
         userInfo.setCurrentLatLon(currentLat, currentLon);
         userInfo.setCurrentXY(geoInfo.getX(), geoInfo.getY());
 
