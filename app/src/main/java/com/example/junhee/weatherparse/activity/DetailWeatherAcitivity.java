@@ -164,7 +164,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         weekImg6 = (ImageView) findViewById(R.id.img_week6);
         weekImg7 = (ImageView) findViewById(R.id.img_week7);
 
-
         time_img1 = (ImageView) findViewById(R.id.img_time1);
         time_img2 = (ImageView) findViewById(R.id.img_time2);
         time_img3 = (ImageView) findViewById(R.id.img_time3);
@@ -281,7 +280,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
             case "SKY_W04":
                 resId = Const.ImgResIconID.SKY_STATUS_FOGGY;
                 break;
-
 
             case "SKY_W07":
                 resId = Const.ImgResIconID.PTY_STATUS_RAINNY;
@@ -516,8 +514,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         progressBar.getProgressDrawable().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
         progressBar.setProgress(intCurrent);
     }
-
-
 
     @Override
     public void shareValue(GeoInfo geoInfo) {

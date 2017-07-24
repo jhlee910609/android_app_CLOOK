@@ -8,10 +8,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -19,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.junhee.weatherparse.R;
+import com.example.junhee.weatherparse.adapter.CustomDialogAdapter;
 import com.example.junhee.weatherparse.domain.GeoInfo;
 import com.example.junhee.weatherparse.domain.UserInfo;
 
@@ -29,7 +29,7 @@ import java.util.List;
  * Created by JunHee on 2017. 7. 15..
  */
 
-public class CustomDialog extends Dialog {
+public class CustomDialog extends Dialog implements CustomDialogAdapter.Callback {
 
     private EditText mEditText;
     private TextView mTitle;
@@ -40,25 +40,8 @@ public class CustomDialog extends Dialog {
     List<GeoInfo> cityList;
     private CustomDiaListener mListner;
     public int mPosition = 0;
-    private String cityLat = "";
-    private String cityLon = "";
-    private ArrayAdapter<String> adapter;
-
-    public String getCityLat() {
-        return cityLat;
-    }
-
-    public void setCityLat(String cityLat) {
-        this.cityLat = cityLat;
-    }
-
-    public String getCityLon() {
-        return cityLon;
-    }
-
-    public void setCityLon(String cityLon) {
-        this.cityLon = cityLon;
-    }
+    private GeoInfo selectedGeoInfo = null;
+    public CustomDialogAdapter customAdapter;
 
     public CustomDialog(@NonNull Context context, CustomDiaListener callback) {
         super(context);
@@ -68,22 +51,23 @@ public class CustomDialog extends Dialog {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setWindowManager();
         initWidget();
         setData();
+        selectedGeoInfo = cityList.get(0);
+        Log.e("CustomDialog", "======== selectedGeoInfo : " + selectedGeoInfo);
         setmListview();
         setBtnOnClick();
         setFilerOnEdit();
+
     }
 
-    private void setMListner() {
-        GeoInfo geoInfo = cityList.get(mPosition);
-        UserInfo.getInstance().setCurrentLatLon(geoInfo.getLat(), geoInfo.getLon());
-        UserInfo.getInstance().setCurrentXY(geoInfo.getX(), geoInfo.getY());
-        UserInfo.getInstance().setCurrentCity(geoInfo.getCityName());
-        mListner.shareValue(geoInfo);
+    private void setMListner(GeoInfo selectedGeoInfo) {
+        UserInfo.getInstance().setCurrentLatLon(selectedGeoInfo.getLat(), selectedGeoInfo.getLon());
+        UserInfo.getInstance().setCurrentXY(selectedGeoInfo.getX(), selectedGeoInfo.getY());
+        UserInfo.getInstance().setCurrentCity(selectedGeoInfo.getCityName());
+        mListner.shareValue(selectedGeoInfo);
     }
 
     public GeoInfo getGeoInfo(){
@@ -92,12 +76,12 @@ public class CustomDialog extends Dialog {
 
     private void initWidget() {
         mEditText = (EditText) findViewById(R.id.loc_editText);
+        mBtnSearch = (ImageView) findViewById(R.id.loc_btn_search);
         mTitle = (TextView) findViewById(R.id.loc_title);
         mBtnClose = (ImageView) findViewById(R.id.loc_btn_close);
-        mBtnSearch = (ImageView) findViewById(R.id.loc_btn_search);
         mListview = (ListView) findViewById(R.id.loc_listView);
         mListview.setDivider(null);
-
+        mListview.setTextFilterEnabled(true);
     }
 
     /**
@@ -105,7 +89,7 @@ public class CustomDialog extends Dialog {
      */
     private void setData() {
         cityList = new ArrayList<>();
-        // 시청기준
+        // 각 도별 도청 기준 좌표
         cityList.add(new GeoInfo("서울특별시", 37.566481 + "", 126.977925 + "", 60 + "", 127 + ""));
         cityList.add(new GeoInfo("경기도", 37.274875 + "", 127.009444 + "", 60 + "", 120 + ""));
         cityList.add(new GeoInfo("강원도", 37.885644 + "", 127.729797 + "", 73 + "", 134 + ""));
@@ -122,31 +106,8 @@ public class CustomDialog extends Dialog {
      * ArrayAdapter setting
      */
     private void setmListview() {
-        adapter = new ArrayAdapter<String>(context, android.R.layout.simple_selectable_list_item);
-        adapter.add("서울특별시");
-        adapter.add("경기도");
-        adapter.add("강원도");
-        adapter.add("충청북도");
-        adapter.add("충청남도");
-        adapter.add("전라북도");
-        adapter.add("전라남도");
-        adapter.add("경상북도");
-        adapter.add("경상남도");
-        adapter.add("제주도");
-        setListViewOnClick();
-        mListview.setAdapter(adapter);
-    }
-
-    private void setListViewOnClick() {
-        mListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mPosition = position;
-                Toast.makeText(context, "[" + cityList.get(position).getCityName() + "]가 선택되었습니다.", Toast.LENGTH_SHORT).show();
-                setMListner();
-                dismiss();
-            }
-        });
+        customAdapter = new CustomDialogAdapter(cityList, getContext(), this);
+        mListview.setAdapter(customAdapter);
     }
 
     /**
@@ -162,7 +123,7 @@ public class CustomDialog extends Dialog {
 
     /**
      * TextWatcher를 활용하여 ArrayAdapter 검색 기능
-     * ===== TODO : index 반영 처리
+     * Filter를 통해 키워드 검색 기능 구현
      */
     private void setFilerOnEdit() {
         mEditText.addTextChangedListener(new TextWatcher() {
@@ -178,18 +139,13 @@ public class CustomDialog extends Dialog {
 
             @Override
             public void afterTextChanged(Editable edit) {
-                String filterTxt = edit.toString();
-                if (filterTxt.length() > 0) {
-                    mListview.setFilterText(String.valueOf(filterTxt));
-//                    for(GeoInfo temp : cityList){
-//                        if (temp.getCityName().contains(filterTxt)){
-//                            mListner.shareValue(temp);
-//                            dismiss();
-//                        }
-//                    }
+                String filterText = edit.toString();
+                if(filterText.length() > 0){
+                    mListview.setFilterText(filterText);
                 } else {
                     mListview.clearTextFilter();
                 }
+
             }
         });
     }
@@ -207,11 +163,14 @@ public class CustomDialog extends Dialog {
                 Toast.makeText(v.getContext(), "서치 동작 완료", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
-    private void setmBtnSearch(){
-
+    @Override
+    public void getData(GeoInfo geoInfo) {
+        selectedGeoInfo = geoInfo;
+        setMListner(geoInfo);
+        Log.e("CustomDialog", "======== UserInfo : " + UserInfo.getInstance().getCurrentCity());
+        dismiss();
     }
 
     /**

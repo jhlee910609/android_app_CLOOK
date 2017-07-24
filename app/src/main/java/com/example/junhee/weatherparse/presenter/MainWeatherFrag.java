@@ -65,6 +65,10 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
         return y;
     }
 
+    /* 시간 예외 처리 해주기 */
+    private void setDate(){
+
+    }
 
     @Override
     public void onAttach(Context context) {

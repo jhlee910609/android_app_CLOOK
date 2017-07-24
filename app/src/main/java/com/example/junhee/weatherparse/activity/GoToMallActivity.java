@@ -91,6 +91,12 @@ public class GoToMallActivity extends AppCompatActivity implements View.OnClickL
 
     private void initOnClick() {
         imgBack.setClickable(true);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         bannerOne.setClickable(true);
         bannerTwo.setClickable(true);
         bannerThree.setClickable(true);

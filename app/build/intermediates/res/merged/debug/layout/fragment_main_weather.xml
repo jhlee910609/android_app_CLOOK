@@ -62,7 +62,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_tomo"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -102,7 +102,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_21"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -142,7 +142,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_18"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -182,7 +182,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_15"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -222,7 +222,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_12"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
         <TextView
@@ -301,7 +301,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/main_time_9"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="9sp" />
         </RelativeLayout>
 
     </android.support.constraint.ConstraintLayout>
