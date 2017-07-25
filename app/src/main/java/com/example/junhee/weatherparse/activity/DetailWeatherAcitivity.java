@@ -78,8 +78,8 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
     String currentWeather = "";
 
     // 신사역 x,y 좌표
-    String x = UserInfo.getInstance().getCurrentX();
-    String y = UserInfo.getInstance().getCurrentY();
+    String x = "";
+    String y = "";
     String currentCity = UserInfo.getInstance().getCurrentCity();
 
     @Override
@@ -88,7 +88,13 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_weather_acitivity);
 
+        x = UserInfo.getInstance().getCurrentX();
+        y = UserInfo.getInstance().getCurrentY();
+        Log.e("DetailWeatherActivity", UserInfo.getInstance().toString());
+
+
         initWidget();
+        Log.e("DetailWeatherActivity", "onCreate [ x ::" + x + ", y :: " + y + " ]");
         getDataFromNet();
         updateUi();
         setProgressBar();
@@ -99,6 +105,7 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
     private void getDataFromNet() {
 
+        Log.e("DetailWeatherActivity", "getDataFromNet [ x ::" + x + ", y :: " + y + " ]");
         tenDaysUrl = WeatherParser.setSk6daysUri(x, y);
         discomfortUrl = WeatherParser.setDiscomfortUri(DateHandler.changeYyyyMMddHH());
         dustUrl = WeatherParser.setSkDustUrl(x, y);
@@ -409,12 +416,13 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
             dustTxt.setText(pm10.getGrade());
 
         } else if (url.equals(currentWeather)) {
-
+            Log.e("DetailWeatherActivity", "Tasking exectue(); === currentWeather");
             CurrentWeather currentWeather = ConverJson.JsonToSkCurrent(jsonResult);
             com.example.junhee.weatherparse.domain.skCurrentWeather.Weather weather = currentWeather.getWeather();
             Hourly[] hourlies = weather.getHourly();
             com.example.junhee.weatherparse.domain.skCurrentWeather.Temperature temp = hourlies[0].getTemperature();
             com.example.junhee.weatherparse.domain.skCurrentWeather.Sky sky = hourlies[0].getSky();
+            Log.e("DetailWeatherActivity", "Tasking exectue(); === getTc()" + UserInfo.getInstance().getCurrentCity() + " :::: " + temp.getTc());
 
             detailCityName.setText(currentCity);
             detailCurrentTemp.setText(temp.getTc() + Const.SpecialChar.CELSIUS);

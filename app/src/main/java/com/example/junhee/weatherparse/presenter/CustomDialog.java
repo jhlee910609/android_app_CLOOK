@@ -29,7 +29,7 @@ import java.util.List;
  * Created by JunHee on 2017. 7. 15..
  */
 
-public class CustomDialog extends Dialog implements CustomDialogAdapter.Callback {
+public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCallback {
 
     private EditText mEditText;
     private TextView mTitle;
@@ -60,7 +60,6 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.Callback
         setmListview();
         setBtnOnClick();
         setFilerOnEdit();
-
     }
 
     private void setMListner(GeoInfo selectedGeoInfo) {
@@ -80,7 +79,7 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.Callback
         mTitle = (TextView) findViewById(R.id.loc_title);
         mBtnClose = (ImageView) findViewById(R.id.loc_btn_close);
         mListview = (ListView) findViewById(R.id.loc_listView);
-        mListview.setDivider(null);
+//        mListview.setDivider(null);
         mListview.setTextFilterEnabled(true);
     }
 
@@ -104,6 +103,7 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.Callback
 
     /**
      * ArrayAdapter setting
+     * callback을 넘겨준다.
      */
     private void setmListview() {
         customAdapter = new CustomDialogAdapter(cityList, getContext(), this);

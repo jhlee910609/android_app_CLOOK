@@ -735,7 +735,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_tomo"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -820,7 +820,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_21"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -905,7 +905,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_18"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -990,7 +990,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_15"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -1076,7 +1076,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_12"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -1160,7 +1160,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/main_time_9"
-                        android:textSize="12sp"
+                        android:textSize="8sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -1347,7 +1347,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="6dp"
                         android:text="남동풍"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txt_detail_wind_speed" />
