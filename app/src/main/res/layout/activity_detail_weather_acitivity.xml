@@ -52,7 +52,7 @@
                     android:max="24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toRightOf="@+id/constraintLayout18"
+                    app:layout_constraintLeft_toRightOf="@+id/constraintLayout20"
                     app:layout_constraintRight_toLeftOf="@+id/constraintLayout19"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,7 +84,7 @@
                         app:srcCompat="@mipmap/icon_moon" />
 
                     <TextView
-                        android:id="@+id/textView27"
+                        android:id="@+id/textView123"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
@@ -100,7 +100,7 @@
                 </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout18"
+                    android:id="@+id/constraintLayout20"
                     android:layout_width="48dp"
                     android:layout_height="65dp"
                     android:layout_marginBottom="12dp"
@@ -113,7 +113,7 @@
                     app:layout_constraintVertical_bias="0.333">
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imageView111"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
                         android:layout_marginEnd="6dp"
@@ -139,7 +139,7 @@
                         android:textSize="10sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                        app:layout_constraintTop_toBottomOf="@+id/imageView111" />
                 </android.support.constraint.ConstraintLayout>
 
                 <TextView
@@ -224,11 +224,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView211"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView211"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -294,11 +294,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView212"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView212"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -364,11 +364,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView213"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView213"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -434,11 +434,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView214"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView214"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -504,11 +504,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView215"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView215"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -574,11 +574,11 @@
                         android:layout_marginTop="6dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:layout_constraintTop_toBottomOf="@+id/textView217"
                         app:srcCompat="@mipmap/icon_sunny" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView217"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -759,7 +759,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/humid_time6" />
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/imageView61"
                         android:layout_width="10dp"
                         android:layout_height="12dp"
                         android:layout_marginEnd="2dp"
@@ -1230,7 +1230,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout19"
+                    android:id="@+id/constraintLayout191"
                     android:layout_width="48dp"
                     android:layout_height="106dp"
                     android:layout_marginBottom="15dp"
@@ -1258,10 +1258,10 @@
                         app:layout_constraintHorizontal_bias="0.523"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                        app:layout_constraintTop_toBottomOf="@+id/textView311" />
 
                     <TextView
-                        android:id="@+id/textView31"
+                        android:id="@+id/textView311"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -1288,10 +1288,10 @@
                         android:textSize="12sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                        app:layout_constraintTop_toBottomOf="@+id/imageView81" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView81"
                         android:layout_width="0dp"
                         android:layout_height="35dp"
                         android:layout_marginEnd="6dp"
@@ -1365,10 +1365,10 @@
                         android:textSize="12sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                        app:layout_constraintTop_toBottomOf="@+id/imageView82" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView82"
                         android:layout_width="0dp"
                         android:layout_height="35dp"
                         android:layout_marginEnd="6dp"
@@ -1412,10 +1412,10 @@
                         app:layout_constraintHorizontal_bias="0.523"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                        app:layout_constraintTop_toBottomOf="@+id/textView312" />
 
                     <TextView
-                        android:id="@+id/textView31"
+                        android:id="@+id/textView312"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -1442,10 +1442,10 @@
                         android:textSize="12sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                        app:layout_constraintTop_toBottomOf="@+id/imageView83" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView83"
                         android:layout_width="0dp"
                         android:layout_height="35dp"
                         android:layout_marginEnd="6dp"
@@ -1623,7 +1623,7 @@
         android:id="@+id/detail_currentTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="28'C"
         android:textSize="30sp"
