@@ -1,25 +1,28 @@
 # 일기예보 기반 패션 정보 APP - CLOOK
 
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fin4w4a0w0j30b408gwen.jpg)
+
 > Open API 파싱 연습 및 Fragment control 연습을 위해 날씨 앱을 개발해보기로 했다.
 > 약간의 차별성을 갖기 위해 '패션'이라는 소재를 가미했다.
 
 - [CLOOK 플로우 차트 보기](https://www.slideshare.net/secret/5aLvyGDSVFLnxL)
+- [CLOOK 구현 영상보기](https://www.youtube.com/watch?v=N0Khy7a2ZZQ)
 
 
 
-## 일기예보 Parsing
+## 1. 처음해보는 일기예보 API Parsing
 
-### 1. API 준비하기 (SK Planet weather API, 기상청 API)
+### 1.1. API 준비하기 (SK Planet weather API, 기상청 API)
 
 - Firebase 기반 프로젝트 진행 전, 기상 API를 알아보았다.
 - 기상청, Open Weather(세계 기상), Yahoo 등 다양한 기상 관련 Open API가 있지만 [SK Planet weatherI](https://developers.skplanetx.com/develop/self-console/)에서 제공하는 기상 API를 사용하기로 결정했다.
-- Network Lib를 사용하지 않고, 공부를 위해 `HttpUrlConnection(defaul class)`를 사용했다. 
+- Network Lib를 사용하지 않고, 공부를 위해 `HttpUrlConnection(Java defaul class)`를 사용했다. 
 
 
 
 
 
-### 2. Parsing 과정
+### 2.2. Parsing 과정
 
 ##### 1.1. Network 통신을 통해 필요한 데이터가 무엇인지 정의한다.
 
@@ -190,20 +193,48 @@ public class Weather3hr {
   - 이를 위해 개발자 문서는 꼭 꼼꼼히 읽어보자.
 
 
-
 ##### 1.5. 원하는 데이터를 받아, 하고 싶은 작업을 진행한다.
+
+- 비동기로 처리되는 Network의 callback을 받기 위해 interface를 구현하여 관련 메소드를 호출하게 작성했다. [[코드보기](https://github.com/jhlee910609/android_app_CLOOK/blob/master/app/src/main/java/com/example/junhee/weatherparse/util/weatherParser/Remote.java)]
+
 
 - 데이터를 확인하기 위해 받아온 데이터를 `TextView`에 `.setText();` 하였다. 
 
 
 
 
-## Vertical ViewPager
+### 2. ViewPager
 
 - 메인 화면에 사용된 Vertical ViewPager는 `me.kaelaela:verticalviewpager:1.0.0@aar`라이브러리를 통해 구현할 수 있었다.
 
+- 사용성이 좋지 못한 것 같아 다음에는 일부로 Vertical ViewPager를 사용하진 말아야겠다. 
 
 
-## Advanced
 
-- viewPager 내부의 
+
+### 3. CustomDialogAdapter and ListFilter
+
+- 지역 변경하는 부분에 있어 CustomDialog 안에 Filter class 를 상속한 ListFilter를 ListView에 달아 실시간 지역 키워드 검색이 가능하도록 만들었다. [[전체 코드 보기](https://github.com/jhlee910609/android_app_CLOOK/blob/master/app/src/main/java/com/example/junhee/weatherparse/adapter/CustomDialogAdapter.java)]
+- ​
+
+
+### 4. Gradle Dependency
+
+- 아래와 같은 라이브러리를 사용했다.
+
+```groovy
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.github.flavienlaurent.discrollview:library:0.0.2@aar'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.tsengvn:typekit:1.0.1'
+    compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.squareup.retrofit:converter-gson:2.+'
+}
+```
+
