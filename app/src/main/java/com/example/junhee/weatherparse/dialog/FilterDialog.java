@@ -23,6 +23,7 @@ import com.example.junhee.weatherparse.adapter.FilterAdapter;
 
 public class FilterDialog extends Dialog {
 
+    // CustomSpinner를 띄우는 Dialog
     public Context mContext;
     Spinner spinnerLoc, spinnerAct;
     ImageView btnClose, btnSearch;
@@ -58,7 +59,6 @@ public class FilterDialog extends Dialog {
         spinnerAct.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // 로직 작성
             }
 
             @Override
@@ -69,7 +69,6 @@ public class FilterDialog extends Dialog {
         spinnerLoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // 로직 작성
             }
 
             @Override

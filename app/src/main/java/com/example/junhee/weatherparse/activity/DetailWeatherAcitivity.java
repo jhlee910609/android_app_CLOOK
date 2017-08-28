@@ -90,11 +90,8 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
         x = UserInfo.getInstance().getCurrentX();
         y = UserInfo.getInstance().getCurrentY();
-        Log.e("DetailWeatherActivity", UserInfo.getInstance().toString());
-
 
         initWidget();
-        Log.e("DetailWeatherActivity", "onCreate [ x ::" + x + ", y :: " + y + " ]");
         getDataFromNet();
         updateUi();
         setProgressBar();
@@ -105,7 +102,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
     private void getDataFromNet() {
 
-        Log.e("DetailWeatherActivity", "getDataFromNet [ x ::" + x + ", y :: " + y + " ]");
         tenDaysUrl = WeatherParser.setSk6daysUri(x, y);
         discomfortUrl = WeatherParser.setDiscomfortUri(DateHandler.changeYyyyMMddHH());
         dustUrl = WeatherParser.setSkDustUrl(x, y);
@@ -192,7 +188,7 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
     private void updateUi() {
 
-        // 1. 시간별 예보 셋
+        // 1. 시간별 예보 셋팅
         setWeatherOnTime(time_temp_txt1, time_humid_txt1, time_img1, Const.ForecstTime.FCST_01);
         setWeatherOnTime(time_temp_txt2, time_humid_txt2, time_img2, Const.ForecstTime.FCST_02);
         setWeatherOnTime(time_temp_txt3, time_humid_txt3, time_img3, Const.ForecstTime.FCST_03);
@@ -200,11 +196,9 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         setWeatherOnTime(time_temp_txt5, time_humid_txt5, time_img5, Const.ForecstTime.FCST_05);
         setWeatherOnTime(time_temp_txt6, time_humid_txt6, time_img6, Const.ForecstTime.FCST_06);
 
-        // 2. 주간 날씨 셋
-//        setWeatherOnweek();
     }
 
-    // ======= [ 시간별 예보 셋] ========
+    // ======= [ 시간별 예보 셋팅] ========
     private void setWeatherOnTime(TextView tv1, TextView tv2, ImageView img, String fcstTime) {
 
         tv1.setText(weather3hr.getFcstValue(fcstTime, Const.WeatherType.TEMP_6HR) + Const.SpecialChar.CELSIUS);
@@ -379,7 +373,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
         super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
     }
 
-    // TODO ====== [ 아래 함수로 빼기 ]
     @Override
     public void exectue(String jsonResult, String url) {
 
@@ -411,24 +404,20 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
             com.example.junhee.weatherparse.domain.skDust.Weather weather = dustData.getWeather();
             Dust[] dust = weather.getDust();
             Pm10 pm10 = dust[0].getPm10();
-            Log.e("DetailWeatherActivity", pm10.toString());
             dustDegree.setText(pm10.getValue());
             dustTxt.setText(pm10.getGrade());
 
         } else if (url.equals(currentWeather)) {
-            Log.e("DetailWeatherActivity", "Tasking exectue(); === currentWeather");
             CurrentWeather currentWeather = ConverJson.JsonToSkCurrent(jsonResult);
             com.example.junhee.weatherparse.domain.skCurrentWeather.Weather weather = currentWeather.getWeather();
             Hourly[] hourlies = weather.getHourly();
             com.example.junhee.weatherparse.domain.skCurrentWeather.Temperature temp = hourlies[0].getTemperature();
             com.example.junhee.weatherparse.domain.skCurrentWeather.Sky sky = hourlies[0].getSky();
-            Log.e("DetailWeatherActivity", "Tasking exectue(); === getTc()" + UserInfo.getInstance().getCurrentCity() + " :::: " + temp.getTc());
 
             detailCityName.setText(currentCity);
             detailCurrentTemp.setText(temp.getTc() + Const.SpecialChar.CELSIUS);
             detailCurrentTime.setText(DateHandler.getCurrentTime());
             detailWeekName.setText(DateHandler.getWeekName());
-            Log.e("DetailWeatherActivity", sky.getCode());
 
             setWind(hourlies[0]);
             setHourlyImgFromCode(sky.getCode(), detailCurrentImg);
@@ -525,8 +514,6 @@ public class DetailWeatherAcitivity extends AppCompatActivity implements View.On
 
     @Override
     public void shareValue(GeoInfo geoInfo) {
-//        x = geoInfo.getX();
-//        y = geoInfo.getY();
-//        detailCityName.setText(geoInfo.getCityName());
+
     }
 }

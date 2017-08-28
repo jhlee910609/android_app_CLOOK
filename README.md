@@ -10,9 +10,18 @@
 
 
 
-## 1. 처음해보는 일기예보 API Parsing
 
-### 1.1. API 준비하기 (SK Planet weather API, 기상청 API)
+### 1. CLOOK 화면
+
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fizukandqrj31hc0u0gs4.jpg)
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fizuk9iijsj31hc0u0n3x.jpg)
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fizuk7vtdij31hc0u0gtf.jpg)
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fizuk6nnylj31hc0u07bt.jpg)
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fizuk4udivj31hc0u0nfb.jpg)
+
+### 1. 처음해보는 일기예보 API Parsing
+
+##### 1.1. API 준비하기 (SK Planet weather API, 기상청 API)
 
 - Firebase 기반 프로젝트 진행 전, 기상 API를 알아보았다.
 - 기상청, Open Weather(세계 기상), Yahoo 등 다양한 기상 관련 Open API가 있지만 [SK Planet weatherI](https://developers.skplanetx.com/develop/self-console/)에서 제공하는 기상 API를 사용하기로 결정했다.
@@ -22,21 +31,24 @@
 
 
 
-### 2.2. Parsing 과정
+### 2. Parsing 과정
 
-##### 1.1. Network 통신을 통해 필요한 데이터가 무엇인지 정의한다.
+###### 2.1. Network 통신을 통해 필요한 데이터가 무엇인지 정의한다.
 
 - 해당 프로젝트에서는 실시간 날씨 데이터(현재, D+7 주간 예보)이다.
 
 
 
-##### 1.2. API가 있다면 받는 데이터 형태(주로 JSON, XML..)가 무엇인지 찾는다.
+
+###### 2.2. API가 있다면 받는 데이터 형태(주로 JSON, XML..)가 무엇인지 찾는다.
 
 - planet API는 JSON 형태로 데이터를 전송해준다. 
 
 
 
-##### 1.3. 해당 데이터의 형태를 분석한다.
+
+
+###### 2.3. 해당 데이터의 형태를 분석한다.
 
 - 기상정보가 굉장히 다양하기 때문에 JSON 데이터 구조가 상당히 복잡하다.
 - 이런 상황을 위해 두 가지 사이트를 구비해두었다.
@@ -181,7 +193,7 @@ public class Weather3hr {
 }
 ```
 
-##### 1.4. 모델링한 데이터를 기반으로 API 파싱에 돌입한다.
+###### 1.4. 모델링한 데이터를 기반으로 API 파싱에 돌입한다.
 
 - `Retrofit2`, `Okhttp` Lib 를 이용하면 조금 더 손쉽게 데이터를 파싱할 수 있지만 제공하는 API의 자료 형태에 따라 다를 수도 있겠다는 생각이 들었다.
 - 이번 프로젝트에서는 공부를 위해 JAVA 내장 class인 `HttpUrlConnection`을 사용했다.
@@ -192,8 +204,10 @@ public class Weather3hr {
   - 당연한 이야기지만 Error code만 잘 분석해도 금방 문제를 해결할 수 있다.
   - 이를 위해 개발자 문서는 꼭 꼼꼼히 읽어보자.
 
+  ​
 
-##### 1.5. 원하는 데이터를 받아, 하고 싶은 작업을 진행한다.
+
+###### 1.5. 원하는 데이터를 받아, 하고 싶은 작업을 진행한다.
 
 - 비동기로 처리되는 Network의 callback을 받기 위해 interface를 구현하여 관련 메소드를 호출하게 작성했다. [[코드보기](https://github.com/jhlee910609/android_app_CLOOK/blob/master/app/src/main/java/com/example/junhee/weatherparse/util/weatherParser/Remote.java)]
 
@@ -206,8 +220,7 @@ public class Weather3hr {
 ### 2. ViewPager
 
 - 메인 화면에 사용된 Vertical ViewPager는 `me.kaelaela:verticalviewpager:1.0.0@aar`라이브러리를 통해 구현할 수 있었다.
-
-- 사용성이 좋지 못한 것 같아 다음에는 일부로 Vertical ViewPager를 사용하진 말아야겠다. 
+- 툴바와 함께 사용할 경우, 사용성이 좋지 못한 것 같아 다음에는 Vertical ViewPager를 사용하진 말아야겠다. 
 
 
 

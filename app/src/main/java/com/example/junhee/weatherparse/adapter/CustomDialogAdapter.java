@@ -1,7 +1,6 @@
 package com.example.junhee.weatherparse.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +23,13 @@ public class CustomDialogAdapter extends BaseAdapter implements Filterable {
 
     private List<GeoInfo> cityList = new ArrayList<>();
     private List<GeoInfo> filteredList = new ArrayList<>();
-    Filter listFilter;
+    private ListFilter listFilter;
 
     private GeoInfo selectedGeoInfo = null;
     public DialogCallback dialogCallback = null;
 
     // == 기존 코드 ==
     private String filterTxt = "";
-
-
     public String selectedCity = "";
     private TextView tv;
     private Context mContext;
@@ -67,8 +64,8 @@ public class CustomDialogAdapter extends BaseAdapter implements Filterable {
             @Override
             public void onClick(View v) {
                 selectedGeoInfo = filteredList.get(pos);
-                Log.e("CustomDialogAdapter", " ============ selectedCity : " + selectedGeoInfo.toString());
-                /* 인터페이스를 사용했다... 구현 상황이 맞는지는 모르겠으나 ... 구현은 된다 */
+
+                // 인터페이스를 사용하여 데이터를 전달하도록 하였다.
                 dialogCallback.getData(selectedGeoInfo);
             }
         });
@@ -98,6 +95,7 @@ public class CustomDialogAdapter extends BaseAdapter implements Filterable {
         return listFilter;
     }
 
+    // Filter를 상속받아 검색어를 필터링하여 ListView에 보여줄 수 있도록 하였다.
     private class ListFilter extends Filter {
 
         @Override
@@ -107,6 +105,7 @@ public class CustomDialogAdapter extends BaseAdapter implements Filterable {
             if (constraint == null || constraint.length() == 0) {
                 results.values = cityList;
                 results.count = cityList.size();
+
             } else {
                 ArrayList<GeoInfo> itemList = new ArrayList<>();
 

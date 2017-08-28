@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -56,7 +55,6 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
         initWidget();
         setData();
         selectedGeoInfo = cityList.get(0);
-        Log.e("CustomDialog", "======== selectedGeoInfo : " + selectedGeoInfo);
         setmListview();
         setBtnOnClick();
         setFilerOnEdit();
@@ -79,7 +77,6 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
         mTitle = (TextView) findViewById(R.id.loc_title);
         mBtnClose = (ImageView) findViewById(R.id.loc_btn_close);
         mListview = (ListView) findViewById(R.id.loc_listView);
-//        mListview.setDivider(null);
         mListview.setTextFilterEnabled(true);
     }
 
@@ -88,7 +85,8 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
      */
     private void setData() {
         cityList = new ArrayList<>();
-        // 각 도별 도청 기준 좌표
+        // 각 도별 도청 기준 좌표값 셋팅
+        // 전국 8도 밖에 사용하지 않아 손코딩하였지만, 지역 개수 증가 시 API 사용해야할듯.
         cityList.add(new GeoInfo("서울특별시", 37.566481 + "", 126.977925 + "", 60 + "", 127 + ""));
         cityList.add(new GeoInfo("경기도", 37.274875 + "", 127.009444 + "", 60 + "", 120 + ""));
         cityList.add(new GeoInfo("강원도", 37.885644 + "", 127.729797 + "", 73 + "", 134 + ""));
@@ -111,7 +109,7 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
     }
 
     /**
-     * dialog.show(); 할 때, DIM 효과를 주기 위해 처리
+     * dialog.show(); 호출 시, DIM 효과를 주기 위해 처리
      */
     private void setWindowManager() {
         WindowManager.LayoutParams window = new WindowManager.LayoutParams();
@@ -137,6 +135,7 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
 
             }
 
+            // textWatcher를 활용하여 검색된 결과 바로 출력할 수 있도록 하였다.
             @Override
             public void afterTextChanged(Editable edit) {
                 String filterText = edit.toString();
@@ -145,7 +144,6 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
                 } else {
                     mListview.clearTextFilter();
                 }
-
             }
         });
     }
@@ -169,7 +167,6 @@ public class CustomDialog extends Dialog implements CustomDialogAdapter.DialogCa
     public void getData(GeoInfo geoInfo) {
         selectedGeoInfo = geoInfo;
         setMListner(geoInfo);
-        Log.e("CustomDialog", "======== UserInfo : " + UserInfo.getInstance().getCurrentCity());
         dismiss();
     }
 

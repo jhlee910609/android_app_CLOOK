@@ -3,7 +3,7 @@ package com.example.junhee.weatherparse.util;
 import com.example.junhee.weatherparse.R;
 
 /**
- * Created by JunHee on 2017. 7. 12..
+ * 날씨 관련 상수값 및 날씨 상황에 따른 이미지 처리를 위해 해당 클래스를 만들었다. 
  */
 
 public class Const {

@@ -1,7 +1,7 @@
 package com.example.junhee.weatherparse.domain;
 
 /**
- * Created by JunHee on 2017. 7. 14..
+ * UserInfo의 경우, 1개의 객체만 존재하므로 싱글톤 패턴을 적용해보았다.
  */
 
 public class UserInfo {
@@ -9,6 +9,7 @@ public class UserInfo {
     private String selectedGender = "";
     private String selectedAge = "";
 
+    // 최초 앱 실행 시, 날짜 및 지역 셋팅을 위해 미리 설정 값을 넣어놓았다.
     private String currentCity = "서울특별시";
     private String currentLat = "37.566481";
     private String currentLon = "126.977925";

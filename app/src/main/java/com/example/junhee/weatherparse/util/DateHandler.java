@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by JunHee on 2017. 7. 12..
+ * 기상청 API와 SK Planet Weather API의 날씨 정보 GET 시, 요구하는 날짜 형식이 달라 Handler를 클래스에 모아 만들었다.
  */
 
 public class DateHandler {

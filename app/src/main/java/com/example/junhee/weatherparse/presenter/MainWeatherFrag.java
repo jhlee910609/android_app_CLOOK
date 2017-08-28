@@ -44,7 +44,6 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     private String x = "61";
     private String y = "125";
 
-    // TODO 바꿈 ======================
     public static String baseDate = DateHandler.changerYyyyMMdd();
     Weather3hr weather3hr = Weather3hr.getInstance();
 
@@ -92,7 +91,6 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
      */
 
     public void getDataFromNet() {
-        // TODO =========== 바꿔야함!!!!!!!!!!!!!!!!!!!!!!!!!!!
         fcstFromCurrent = setKmaUri(baseDate, x, y);
         Log.e("MainWeatherFrag", "fcstFromCurrent : " + fcstFromCurrent);
         Log.e("MainWeatherFrag", " x : " + x + ", y : " + y);
@@ -124,7 +122,6 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
     }
 
     public void setMainUi() {
-        // TODO 반복되는 코드가 있기 때문에 정리하기! .. 쌍으로 묶어서 정리할 수 있을 것 같다.
         setEachUi(Const.ForecstTime.FCST_01, Const.WeatherType.TEMP_6HR, Const.WeatherType.SKY_STATUS, temp1, imgSky1);
         setEachUi(Const.ForecstTime.FCST_02, Const.WeatherType.TEMP_6HR, Const.WeatherType.SKY_STATUS, temp2, imgSky2);
         setEachUi(Const.ForecstTime.FCST_03, Const.WeatherType.TEMP_6HR, Const.WeatherType.SKY_STATUS, temp3, imgSky3);
@@ -176,8 +173,7 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
             Body body = response.getBody();
             Items items = body.getItems();
             Item[] item = items.getItem();
-            Log.e("MainWeatherFrag", "=== fcstFromCurrent : " + url.toString());
-            // TODO 받아온 데이터 셋팅 전, hashMap<>(); 비우기
+
             weather3hr.weathers3hr.clear();
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_01);
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_02);
@@ -186,7 +182,6 @@ public class MainWeatherFrag extends Fragment implements TaskInterface, CustomDi
             weather3hr.setDatasFromKma(item, baseDate, Const.ForecstTime.FCST_05);
             weather3hr.setDatasFromKma(item, (Integer.parseInt(baseDate) + 1) + "", Const.ForecstTime.FCST_06);
         }
-        Log.e("MainWeatherFrag", "=================== execute();");
         setMainUi();
     }
 

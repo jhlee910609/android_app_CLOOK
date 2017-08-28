@@ -7,7 +7,7 @@ import android.widget.Toast;
 import com.example.junhee.weatherparse.activity.MainActivity;
 
 /**
- * Created by JunHee on 2017. 7. 11..
+ * back button 두 번 클릭 시, 앱 종료 기능을 위해 해당 클래스를 설계하였다.
  */
 
 public class BackCloseHandler {

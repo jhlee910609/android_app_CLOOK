@@ -117,7 +117,6 @@ public class IntroActivity extends AppCompatActivity {
                     case 0:
                         selectedAge = "twenties";
                         Log.e("IntroActivity", "=================== selectedAge : " + selectedAge);
-
                         break;
 
                     case 1:
